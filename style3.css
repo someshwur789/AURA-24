@@ -1,0 +1,307 @@
+/* Event Card */
+.name{
+    width: auto;
+    height: auto;
+    font-size: 100px;
+    font-weight: 500;
+    text-align: center;
+    font-family: hellofont;
+    background: linear-gradient(90deg, #00de04, #00eeff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family:hrfont;
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Ensure the video is behind other elements */
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    pointer-events: none; /* Prevent interaction with the video */
+}
+
+.carousel {
+    position: relative;
+    z-index: 1;
+    height: 90vh;
+    overflow: hidden;
+    pointer-events: none;
+    background: white
+}
+.carousel-item {
+    --items: 5;
+    --width: clamp(150px, 30vw, 300px);
+    --height: clamp(200px, 40vw, 400px);
+    --x: calc(var(--active) * 800%);
+    --y: calc(var(--active) * 200%);
+    --rot: calc(var(--active) * 120deg);
+    --opacity: calc(var(--zIndex) / var(--items) * 3 - 2);
+    overflow: hidden;
+    position: absolute;
+    z-index: var(--zIndex);
+    width: var(--width);
+    height: var(--height);
+    margin: calc(var(--height) * -0.5) 0 0 calc(var(--width) * -0.5);
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transform-origin: 0% 100%;
+    box-shadow: 0 10px 50px 10px rgba(0, 0, 0, 0.5);
+    background: black;
+    pointer-events: all;
+    transform: translate(var(--x), var(--y)) rotate(var(--rot));
+    transition: transform 0.8s cubic-bezier(0, 0.02, 0, 1);
+}
+.carousel-item .carousel-box {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
+    opacity: var(--opacity);
+    font-family: "Orelo-sw-db", serif;
+}
+
+.carousel-item .carousel-box:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5));
+}
+
+.carousel-item .title {
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    bottom: 20px;
+    left: 20px;
+    transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
+    font-size: clamp(20px, 3vw, 30px);
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item .num {
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    top: 10px;
+    left: 20px;
+    transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
+    font-size: clamp(20px, 10vw, 80px);
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.layout {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.1);
+    transition: transform 0.5s ease;
+}
+
+.carousel {
+    height: 100vh;
+}
+
+/*Event Card For Tablet */
+@media (max-width: 1024px) {
+    .carousel {
+        height: 100vh;
+    }
+    
+    .carousel-item {
+        --width: clamp(120px, 20vw, 250px);
+        --height: clamp(160px, 30vw, 300px);
+    }
+    
+    .carousel-item .title {
+        font-size: clamp(18px, 2.5vw, 28px);
+    }
+    
+    .carousel-item .num {
+        font-size: clamp(18px, 8vw, 60px);
+    }
+}
+
+/*Event Card for Mobile */
+@media (max-width: 767px) {
+    .carousel {
+        height: 100vh;
+    }
+
+    .carousel-item {
+        --width: 80vw;
+        --height: 50vh;
+    }
+    
+    .carousel-item .title {
+        font-size: clamp(16px, 5vw, 24px);
+    }
+    
+    .carousel-item .num {
+        font-size: clamp(16px, 12vw, 40px);
+    }
+    
+    .modal-content {
+        width: 90%;
+    }
+}
+
+
+
+/* Registration */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.register-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hover Effect */
+.register-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-5px);
+}
+
+/* Registration for Mobile */
+@media (max-width: 768px) {
+    .register-btn {
+        padding: 10px 30px;
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-btn {
+        padding: 8px 20px;
+        font-size: 1.8em;
+    }
+}
+.name1{
+    width: auto;
+    height: auto;
+    font-size: 70px;
+    font-weight: 500;
+    text-align: center;
+    font-family: hellofont;
+    background: linear-gradient(90deg, #00de04, #00eeff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: hrfont;
+}
+    /* Countdown container */
+#countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-family: 'Poppins', sans-serif;
+    margin: 20px;
+  }
+  
+  /* Each time box */
+  .time-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #4CAF50;
+    padding: 25px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.8em;
+  }
+  
+  .time-box p {
+    margin-top: 10px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Responsive for tablets and smaller screens */
+  @media (max-width: 768px) {
+    #countdown {
+      flex-direction: row;
+      gap: 10px;
+    }
+    
+    .time-box {
+      padding: 20px;
+      font-size: 1.5em;
+    }
+  }
+  
+  /* Responsive for mobile */
+  @media (max-width: 480px) {
+    #countdown {
+      flex-direction: row;
+      gap: 7px;
+    }
+  
+    .time-box {
+      width: 50px;
+      padding: 15px;
+      font-size: 0.76em;
+    }
+    
+    .time-box p {
+      font-size: 0.8em;
+    }
+  }
+  
+
+
+  @font-face {
+    font-family:hrfont;
+    src: url(Timeline\ Italic.otf);
+}
+
+
+h2 {
+    font-family: hrfont;
+}

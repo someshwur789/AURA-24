@@ -1,0 +1,101 @@
+/* Co-Ordinators */
+.coordinators-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.coordinator {
+    background-color: #ffffff;
+    padding: 20px;
+    width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.coordinator:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.coordinator:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 204, 0, 0.2), rgba(255, 87, 34, 0.2));
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 0;
+}
+
+.coordinator:hover:before {
+    opacity: 1;
+}
+
+.name-phone {
+    position: relative;
+    z-index: 1;
+}
+
+.coordinator-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.coordinator-phone {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.coordinator-phone i {
+    color: #4CAF50;
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+.coordinator-phone:hover i {
+    transform: rotate(360deg);
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Coordinators for Mobile */
+@media (max-width: 768px) {
+    .coordinator {
+        width: 200px;
+        padding: 15px;
+    }
+
+    .coordinator-name {
+        font-size: 1.3em;
+    }
+
+    .coordinator-phone {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .coordinator {
+        width: 150px;
+        padding: 10px;
+    }
+
+    .coordinator-name {
+        font-size: 1.1em;
+    }
+
+    .coordinator-phone {
+        font-size: 0.9em;
+    }
+}

@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+/* General Styles for Desktop */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional background for better visibility */
+}
+
+.logo {
+    flex: 1; /* Logo on the left */
+}
+
+.log {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.text {
+    font-size: 1.5rem; /* Adjust the size of the text */
+    font-weight: bold;
+    color: #fff; /* White text for visibility */
+}
+
+.home {
+    display: flex;
+    justify-content: flex-end; /* Keep the menu on the right */
+    flex: 1;
+}
+
+.home a {
+    margin-left: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.menu-icon {
+    display: none; /* Hide the menu icon on desktop */
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    /* Reset College Name Positioning for Mobile */
+    .log {
+        position: static; /* Remove absolute positioning for mobile */
+        transform: none;
+        text-align: center;
+        flex: 1;
+    }
+
+    .text {
+        font-size: 1.2rem; /* Adjust text size for mobile */
+    }
+
+    /* Hide Full Menu on Mobile View, Show Hamburger Icon Instead */
+    .home {
+        display: none; /* Hide full menu on mobile */
+    }
+
+    .menu-icon {
+        display: block; /* Show the hamburger icon */
+        flex: 1;
+        text-align: right; /* Align hamburger icon to the right */
+    }
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav .home a {
+    color: white;
+    margin: 0 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav .home a:hover {
+    color: #ffda79;
+}
+
+/* Menu Icon */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+}
+
+/* Responsive Menu */
+@media (max-width: 1024px) {
+    .home {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    nav.nav-open .home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    nav.nav-open .home a {
+        margin: 15px 0;
+    }
+}
+
+/* Animated College Logo */
+.animated-logo {
+    animation: logoSlide 3s ease-in-out;
+}
+
+@keyframes logoSlide {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Section Styles */
+.h-text h1, .h-text h2 {
+    animation: fadeInUp 2s ease;
+}
+
+.h-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.h-text h2 {
+    font-size: 2rem;
+    margin-top: 25px;
+}
+
+.h-text img {
+    margin: 20px 0;
+    max-width: 100%;
+    height: auto;
+}
+
+.texture a {
+    background: #ff416c;
+    padding: 10px 30px;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 30px;
+    transition: background 0.3s ease;
+}
+
+.texture a:hover {
+    background: #ff4b2b;
+}
+
+
+
+
+
+
+
+/* Back to Top Button */
+#up-arrow {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff416c;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+}
+
+#up-arrow:hover {
+    background-color: #ff4b2b;
+}

@@ -1,0 +1,32 @@
+/* Info Cards */
+.info-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+    flex-wrap: wrap;
+}
+
+.info {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 0 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.info:hover {
+    transform: translateY(-10px);
+}
+
+.info h3 {
+    font-size: 1.5rem;
+    color: #ff416c;
+}
+
+.info p {
+    font-size: 1.2rem;
+    color: #555;
+}
