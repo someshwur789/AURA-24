@@ -7,7 +7,7 @@
 
 body {
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: black;
 }
 
 header {
@@ -17,6 +17,10 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
+    background: url();
+    background-size: 100% 100%;
+    animation: gradientAnimation 10s ease infinite;
+    background-attachment: fixed;
     color: #fff;
     padding: 20px;
 }
@@ -175,6 +179,9 @@ nav .home a:hover {
 .h-text h2 {
     font-size: 2rem;
     margin-top: 25px;
+    background: linear-gradient(50deg, orange, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .h-text img {
