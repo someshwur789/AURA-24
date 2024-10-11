@@ -31,8 +31,9 @@
     margin-bottom: 10px;
 }
 
-.footer-item p {
+.footer-item h5 {
     margin: 5px 0;
+    font-size: 150%;
 }
 
 /* Social media styles */
