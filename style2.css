@@ -24,9 +24,11 @@
 .info h3 {
     font-size: 1.5rem;
     color: #ff416c;
+    font-family: hrfont;
 }
 
 .info p {
     font-size: 1.2rem;
     color: #555;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
